@@ -4,12 +4,19 @@
     <meta charset="utf-8">
     <title>Aurelia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
   </head>
 
-  <body aurelia-app="main">
+  <body>
+    <div class="row">
+    <div class="px-4 col-md-8">
+      <div class="center-block">
+        <div aurelia-app="main"></div>
+      </div>
+    </div>
+  </div>
     <script src="scripts/vendor-bundle.js"></script>
     <script>SystemJS.import("aurelia-bootstrapper").catch(function(err) { console.log(err); })</script>
   </body>

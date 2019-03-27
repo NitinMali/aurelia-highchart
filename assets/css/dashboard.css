@@ -8,6 +8,41 @@ body {
   vertical-align: text-bottom;
 }
 
+
+
+/*
+  Horizontal menu
+*/
+
+
+.hor-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.hor-menu li {
+  float: left;
+}
+
+.hor-menu .active {
+  background-color: #000000;
+}
+
+.hor-menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.hor-menu li a:hover {
+  background-color: #111111;
+}
+
 /*
  * Sidebar
  */
@@ -25,7 +60,7 @@ body {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  height: calc(100vh - 48px);
+  height: 400px;
   padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
@@ -62,19 +97,50 @@ body {
   text-transform: uppercase;
 }
 
+.font-white {
+  color: #fff;
+}
+
+.bg-grey {
+  background-color: #cccccc !important;
+}
+
+.sidenav {
+  height: 475px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 125px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.clickable{
+  cursor: pointer;
+}
 /*
  * Content
  */
 
+ /*
 [role="main"] {
-  padding-top: 48px; /* Space for fixed navbar */
+  padding-top: 48px; Space for fixed navbar
 }
+*/
 
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
 /*
  * Navbar
  */
 
 .navbar-brand {
+  color: #fff;
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: 1rem;

@@ -1,29 +1,66 @@
 <template>
+
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Aurelia Highcharts</a>    
-    </nav>
+    <div class="bg-dark p-0 shadow">
+      <span class="font-white px-2 clickable" click.delegate='toggleNav()'><i
+          class="material-icons my-2">apps</i></span>
+      <span class="navbar-brand col-sm-3 col-md-2 mr-0">Aurelia Highcharts</span>
+    </div>
 
     <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item" repeat.for="nav of router.navigation">
-                <a class="nav-link ${nav.isActive ? 'active' : ''}" href.bind="nav.href">
-                  <span data-feather="home"></span>
-                  ${nav.title} <span class="sr-only">(current)</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <router-view class="col-md-12"></router-view>
+      <div class="row justify-content-end bg-grey">
+        <div class="hor-menu py-1">
+          <ul class="list-inline">
+            <li class="list-inline-item" repeat.for="nav of router.navigation">
+              <a class="${nav.isActive ? 'active' : ''}" href.bind="nav.href">
+                <span data-feather="home"></span>
+                ${nav.title} <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sidenav bg-light" id="mySidenav">
+          <div class="sidebar-sticky mx-4">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Value</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter margin value">
+                <small id="emailHelp" class="form-text text-muted">value range is between 5 - 30</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Font</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Show label</label>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-secondary my-4">Cancel</button>
+                <button type="submit" class="btn btn-secondary my-4">Submit</button>
+              </div>
+
+            </form>
           </div>
-        </main>
+        </div>
+
+        <div class="col-md-12" id="main">
+          <main role="main" class="px-4">
+            <div
+              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <router-view class="col-md-12"></router-view>
+            </div>
+          </main>
+        </div>
       </div>
     </div>
   </body>
